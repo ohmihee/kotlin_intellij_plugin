@@ -14,7 +14,7 @@ class GoToFileAction:AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         val project: Project? = e.project
         if (project != null) {
-            val filePath = ""
+            val filePath = "./mpsmeta-facade/src/main/java/io/naraway/mpsmeta/facade/api/MpsMetaRole.java"
             val file = project.baseDir?.findFileByRelativePath(filePath)
             if (file != null) {
                 FileEditorManager.getInstance(project).openFile(file, true)
