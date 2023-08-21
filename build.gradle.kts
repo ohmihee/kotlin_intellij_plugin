@@ -20,7 +20,7 @@ dependencies {
 intellij {
     version.set("2022.2.4")
     type.set("IC") // Target IDE Platform
-    plugins.set(listOf("maven"))
+    plugins.set(listOf("maven","com.intellij.java"))
 }
 
 tasks {

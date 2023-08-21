@@ -12,14 +12,18 @@ import java.io.File
 
 class GoToFileAction:AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
+        goToFile(e)
+    }
+
+    private fun goToFile(e: AnActionEvent) {
         val project: Project? = e.project
-        if (project != null) {
-            val filePath = ""
-            val file = project.baseDir?.findFileByRelativePath(filePath)
-            if (file != null) {
-                FileEditorManager.getInstance(project).openFile(file, true)
-            }
-        }
+//        if (project!=ㅜㅕㅣ) {
+//            val filePath = ""
+//            val file = project.baseDir?.findFileByRelativePath(filePath)
+//            if (file != null) {
+//                FileEditorManager.getInstance(project).openFile(file, true)
+//            }
+//        }
     }
 }
 

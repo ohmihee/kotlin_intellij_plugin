@@ -22,6 +22,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.idea.maven</depends>
+    <depends>com.intellij.modules.java</depends>
     <resource-bundle>MavenVersionInspectionBundle</resource-bundle>
     <extensions defaultExtensionNs="com.intellij">
         <!--inspections-->
@@ -39,6 +40,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.example.demo.MyIdeaDemoPluginSettings"/>
+        <toolWindow factoryClass="com.example.demo.factorys.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
     <actions>
         <group id="myideademo" text="myideademo" description="myideademo">
@@ -53,5 +55,12 @@
             <add-to-group group-id="MainMenu" anchor="last"/>
             <action class="com.example.demo.GoToFileAction" id="com.example.demo.GoToFileAction" text="go to file"/>
         </group>
+        <group id="psistudy" text="psistudy" description="psistudy">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="com.example.demo.PsiStudy" id="com.example.demo.PsiStudy" text="psi study"/>
+        </group>
     </actions>
+    <applicationListeners>
+        <listener class="com.example.demo.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    </applicationListeners>
 </idea-plugin>

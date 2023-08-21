@@ -7,10 +7,23 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.ui.JBPopupMenu
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.ui.popup.JBPopupFactory
+import com.intellij.openapi.ui.showYesNoDialog
 import com.intellij.util.Consumer
 
 class MyIdeaDataDialogAction:AnAction("text") {
     override fun actionPerformed(e: AnActionEvent) {
+
+        val result = showYesNoDialog("yes or no","choice", e.project)
+        if (result) {
+            Messages.showMessageDialog("yes", "yes", Messages.getInformationIcon());
+        } else {
+            
+        }
+
+    }
+
+    private fun waringGoToLink(e: AnActionEvent) {
+        return Messages.showWarningDialog(e.project, "<a href='naver.com'>naver.com</a>", "waring")
     }
 
     private fun myIdeaDemoPopupListDialog(e: AnActionEvent) {
